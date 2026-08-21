@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information System - ACU</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; padding: 0;
+            background-color: #000000;
+            font-family: Tahoma, Arial, sans-serif;
+            color: #ffffff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .main-container { display: flex; flex: 1; height: calc(100vh - 30px); }
+        .sidebar {
+            width: 140px;
+            background-color: #0a0a0a;
+            border-left: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 5px;
+            overflow-y: auto;
+            gap: 12px;
+        }
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 10px;
+            color: #cccccc;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .menu-item:hover { background-color: #222222; color: #ffffff; }
+        .menu-icon {
+            width: 32px; height: 32px;
+            margin-bottom: 4px;
+            background-color: #333;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        .content-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .window-box {
+            width: 600px;
+            background-color: #e6e6e6;
+            border: 2px solid #555555;
+            border-radius: 6px;
+            color: #000000;
+            box-shadow: 0 10px 25px rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+        .window-header {
+            background: linear-gradient(to bottom, #4a6b9c, #2c4263);
+            color: white;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .window-controls { display: flex; gap: 4px; }
+        .win-btn {
+            width: 14px; height: 14px;
+            background-color: #ccc;
+            border: 1px solid #888;
+            font-size: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #000;
+        }
+        .window-body { padding: 20px; background-color: #f5f5f5; }
+        .welcome-card {
+            background-color: #ffffff;
+            border: 1px solid #b0c4de;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .welcome-title { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+        .student-name { font-size: 15px; color: #003366; font-weight: bold; }
+        .info-table {
+            width: 100%; margin-top: 15px;
+            border-collapse: collapse; font-size: 12px; text-align: right;
+        }
+        .info-table td { padding: 6px 10px; border-bottom: 1px solid #eee; }
+        .info-label { font-weight: bold; color: #555; width: 30%; }
+        .taskbar {
+            height: 30px;
+            background: linear-gradient(to bottom, #222, #111);
+            border-top: 1px solid #444;
+            display: flex; align-items: center; padding: 0 5px;
+        }
+        .start-btn {
+            background: linear-gradient(to bottom, #3a689e, #1a385c);
+            color: white;
+            border: 1px solid #5a88be;
+            padding: 2px 10px;
+            font-size: 11px; font-weight: bold;
+            border-radius: 3px; display: flex; align-items: center; gap: 5px; cursor: pointer;
+        }
+        .taskbar-tab {
+            margin-right: 10px; background-color: #333; color: #fff;
+            padding: 2px 12px; font-size: 11px; border-radius: 3px; border: 1px solid #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="menu-item"><div class="menu-icon">📝</div><div>التسجيل</div></div>
+            <div class="menu-item"><div class="menu-icon">📅</div><div>جدول محاضراتي</div></div>
+            <div class="menu-item"><div class="menu-icon">📊</div><div>طباعة التقديرات</div></div>
+            <div class="menu-item"><div class="menu-icon">👤</div><div>بياناتي</div></div>
+            <div class="menu-item"><div class="menu-icon">🎓</div><div>التقرير العلمي</div></div>
+            <div class="menu-item"><div class="menu-icon">❓</div><div>إستبيان الاستجابة</div></div>
+            <div class="menu-item"><div class="menu-icon">💳</div><div>طباعة حساب تقدير التخرج</div></div>
+            <div class="menu-item"><div class="menu-icon">⚠️</div><div>معلومات وتنبهات</div></div>
+            <div class="menu-item"><div class="menu-icon">💻</div><div>البريد الإلكتروني للطلاب</div></div>
+            <div class="menu-item"><div class="menu-icon">📜</div><div>لائحة البرنامج</div></div>
+            <div class="menu-item"><div class="menu-icon">✔️</div><div>أعمال الفصل</div></div>
+        </div>
+
+        <div class="content-area">
+            <div class="window-box">
+                <div class="window-header">
+                    <span>معلومات وتنبيهات</span>
+                    <div class="window-controls">
+                        <div class="win-btn">_</div>
+                        <div class="win-btn">❐</div>
+                        <div class="win-btn" onclick="location.href='index.html'">✕</div>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div class="welcome-card">
+                        <div class="welcome-title">Welcome 👋</div>
+                        <div class="student-name">رنا محمد عبدالله محمد</div>
+                        
+                        <table class="info-table">
+                            <tr>
+                                <td class="info-label">الكود الجامعي:</td>
+                                <td>1252002</td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">الكلية:</td>
+                                <td>الصيدلة / Pharmacy</td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">المستوى / الفصل:</td>
+                                <td>المستوى الثالث - المستوى الرئيسي</td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">المعدل التراكمي (GPA):</td>
+                                <td>3.42</td>
+                            </tr>
+                            <tr>
+                                <td class="info-label">حالة التسجيل:</td>
+                                <td style="color: green; font-weight: bold;">مسجل - منتظم</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="taskbar">
+        <button class="start-btn" onclick="location.href='index.html'">
+            <span>🇪🇬</span> Start
+        </button>
+        <div class="taskbar-tab">معلومات وتنبيهات</div>
+    </div>
+
+</body>
+  </html>
+  
