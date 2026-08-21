@@ -11,21 +11,23 @@
             background-color: #000000;
             font-family: Tahoma, Arial, sans-serif;
             color: #ffffff;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
         }
-        .main-container { display: flex; flex: 1; height: calc(100vh - 30px); }
+        .main-container {
+            display: flex;
+            flex: 1;
+            width: 100%;
+        }
         .sidebar {
-            width: 140px;
+            width: 130px;
             background-color: #0a0a0a;
             border-left: 1px solid #333;
             display: flex;
             flex-direction: column;
             padding: 10px 5px;
-            overflow-y: auto;
-            gap: 12px;
+            gap: 10px;
         }
         .menu-item {
             display: flex;
@@ -35,35 +37,33 @@
             font-size: 10px;
             color: #cccccc;
             text-decoration: none;
-            cursor: pointer;
-            padding: 5px;
+            padding: 4px;
             border-radius: 4px;
         }
-        .menu-item:hover { background-color: #222222; color: #ffffff; }
         .menu-icon {
-            width: 32px; height: 32px;
-            margin-bottom: 4px;
-            background-color: #333;
+            width: 28px; height: 28px;
+            margin-bottom: 3px;
+            background-color: #222;
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 14px;
         }
         .content-area {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 10px;
         }
         .window-box {
-            width: 600px;
+            width: 100%;
+            max-width: 550px;
             background-color: #e6e6e6;
             border: 2px solid #555555;
             border-radius: 6px;
             color: #000000;
-            box-shadow: 0 10px 25px rgba(255,255,255,0.1);
             overflow: hidden;
         }
         .window-header {
@@ -88,25 +88,24 @@
             cursor: pointer;
             color: #000;
         }
-        .window-body { padding: 20px; background-color: #f5f5f5; }
+        .window-body { padding: 15px; background-color: #f5f5f5; }
         .welcome-card {
             background-color: #ffffff;
             border: 1px solid #b0c4de;
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 8px;
+            padding: 15px;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        .welcome-title { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
-        .student-name { font-size: 15px; color: #003366; font-weight: bold; }
+        .welcome-title { font-size: 16px; font-weight: bold; color: #333; margin-bottom: 8px; }
+        .student-name { font-size: 14px; color: #003366; font-weight: bold; }
         .info-table {
-            width: 100%; margin-top: 15px;
-            border-collapse: collapse; font-size: 12px; text-align: right;
+            width: 100%; margin-top: 12px;
+            border-collapse: collapse; font-size: 11px; text-align: right;
         }
-        .info-table td { padding: 6px 10px; border-bottom: 1px solid #eee; }
-        .info-label { font-weight: bold; color: #555; width: 30%; }
+        .info-table td { padding: 6px 4px; border-bottom: 1px solid #eee; }
+        .info-label { font-weight: bold; color: #555; width: 35%; }
         .taskbar {
-            height: 30px;
+            height: 32px;
             background: linear-gradient(to bottom, #222, #111);
             border-top: 1px solid #444;
             display: flex; align-items: center; padding: 0 5px;
@@ -115,13 +114,22 @@
             background: linear-gradient(to bottom, #3a689e, #1a385c);
             color: white;
             border: 1px solid #5a88be;
-            padding: 2px 10px;
+            padding: 3px 8px;
             font-size: 11px; font-weight: bold;
-            border-radius: 3px; display: flex; align-items: center; gap: 5px; cursor: pointer;
+            border-radius: 3px; display: flex; align-items: center; gap: 4px;
         }
         .taskbar-tab {
-            margin-right: 10px; background-color: #333; color: #fff;
-            padding: 2px 12px; font-size: 11px; border-radius: 3px; border: 1px solid #555;
+            margin-right: 8px; background-color: #333; color: #fff;
+            padding: 3px 10px; font-size: 10px; border-radius: 3px; border: 1px solid #555;
+        }
+
+        /* تعديلات خصيصاً لشاشات الموبايل */
+        @media (max-width: 600px) {
+            .sidebar { width: 80px; padding: 5px 2px; }
+            .menu-item { font-size: 8px; }
+            .content-area { padding: 5px; }
+            .window-body { padding: 10px; }
+            .info-table { font-size: 10px; }
         }
     </style>
 </head>
@@ -130,16 +138,11 @@
     <div class="main-container">
         <div class="sidebar">
             <div class="menu-item"><div class="menu-icon">📝</div><div>التسجيل</div></div>
-            <div class="menu-item"><div class="menu-icon">📅</div><div>جدول محاضراتي</div></div>
-            <div class="menu-item"><div class="menu-icon">📊</div><div>طباعة التقديرات</div></div>
+            <div class="menu-item"><div class="menu-icon">📅</div><div>الجدول</div></div>
+            <div class="menu-item"><div class="menu-icon">📊</div><div>التقديرات</div></div>
             <div class="menu-item"><div class="menu-icon">👤</div><div>بياناتي</div></div>
-            <div class="menu-item"><div class="menu-icon">🎓</div><div>التقرير العلمي</div></div>
-            <div class="menu-item"><div class="menu-icon">❓</div><div>إستبيان الاستجابة</div></div>
-            <div class="menu-item"><div class="menu-icon">💳</div><div>طباعة حساب تقدير التخرج</div></div>
-            <div class="menu-item"><div class="menu-icon">⚠️</div><div>معلومات وتنبهات</div></div>
-            <div class="menu-item"><div class="menu-icon">💻</div><div>البريد الإلكتروني للطلاب</div></div>
-            <div class="menu-item"><div class="menu-icon">📜</div><div>لائحة البرنامج</div></div>
-            <div class="menu-item"><div class="menu-icon">✔️</div><div>أعمال الفصل</div></div>
+            <div class="menu-item"><div class="menu-icon">🎓</div><div>التقرير</div></div>
+            <div class="menu-item"><div class="menu-icon">⚠️</div><div>تنبيهات</div></div>
         </div>
 
         <div class="content-area">
@@ -193,5 +196,4 @@
     </div>
 
 </body>
-  </html>
-  
+</html>
