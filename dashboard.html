@@ -3,28 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Student Portal - ACU</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            text-align: center;
+        * { box-sizing: border-box; }
+        body, html { 
+            margin: 0; padding: 0; height: 100vh; 
+            background-color: #000; font-family: Tahoma, Arial, sans-serif; 
+            color: #fff; overflow: hidden; display: flex; flex-direction: column;
         }
-        .text-box h1 { margin-bottom: 10px; font-size: 24px; color: #ccc; }
-        .text-box h2 { font-size: 28px; color: #fff; }
+
+        .main-container { display: flex; flex: 1; height: calc(100vh - 30px); width: 100%; }
+
+        /* القائمة الجانبية الكاملة */
+        .sidebar { 
+            width: 85px; background-color: #000; border-left: 1px solid #222; 
+            display: flex; flex-direction: column; padding: 8px 2px; gap: 8px; overflow-y: auto; 
+        }
+        .menu-item { display: flex; flex-direction: column; align-items: center; text-align: center; font-size: 8px; color: #ccc; cursor: pointer; }
+        .menu-icon { 
+            width: 32px; height: 32px; margin-bottom: 2px; background-color: #1a1a1a; 
+            border: 1px solid #333; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 15px; 
+        }
+
+        /* منطقة المنتصف */
+        .content-area { flex: 1; display: flex; align-items: center; justify-content: center; padding: 15px; }
+
+        /* النافذة */
+        .window-box { 
+            width: 100%; max-width: 420px; background-color: #dcdcdc; 
+            border: 1px solid #555; box-shadow: 0 4px 15px rgba(0,0,0,0.6); overflow: hidden;
+        }
+        .window-header { 
+            background: linear-gradient(to right, #003399, #0055cc); color: white; 
+            padding: 5px 8px; font-size: 11px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; 
+        }
+        .window-body { background-color: #ffffff; padding: 35px 20px; text-align: center; color: #000; }
+
+        .welcome-title { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px; }
+        .student-name { font-size: 16px; color: #003399; font-weight: bold; }
+
+        /* الشريط السفلي */
+        .taskbar { 
+            height: 30px; background: #1a1a1a; border-top: 1px solid #333; 
+            display: flex; align-items: center; padding: 0 5px; 
+        }
+        .start-btn { 
+            background: #333; color: white; border: 1px solid #444; 
+            padding: 2px 8px; font-size: 10px; cursor: pointer; display: flex; align-items: center; gap: 4px; 
+        }
+        .taskbar-tab { background: #2a2a2a; color: #fff; padding: 2px 8px; font-size: 10px; margin-right: 8px; border: 1px solid #333; }
     </style>
 </head>
 <body>
-    <div class="text-box">
-        <h1>Welcome</h1>
-        <h2>رنا محمد عبدالله محمد</h2>
+
+    <div class="main-container">
+        <!-- القائمة الجانبية -->
+        <div class="sidebar">
+            <div class="menu-item"><div class="menu-icon">📝</div><div>التسجيل</div></div>
+            <div class="menu-item"><div class="menu-icon">📅</div><div>الجدول</div></div>
+            <div class="menu-item"><div class="menu-icon">📊</div><div>التقديرات</div></div>
+            <div class="menu-item"><div class="menu-icon">👤</div><div>بياناتي</div></div>
+            <div class="menu-item"><div class="menu-icon">🎓</div><div>التقرير</div></div>
+            <div class="menu-item"><div class="menu-icon">❓</div><div>الاستبيان</div></div>
+            <div class="menu-item"><div class="menu-icon">💳</div><div>التقدير</div></div>
+            <div class="menu-item"><div class="menu-icon">⚠️</div><div>تنبيهات</div></div>
+        </div>
+
+        <!-- النافذة وبداخلها الترحيب فقط -->
+        <div class="content-area">
+            <div class="window-box">
+                <div class="window-header">
+                    <span>معلومات وتنبيهات</span>
+                    <span style="cursor:pointer" onclick="location.href='index.html'">✕</span>
+                </div>
+                <div class="window-body">
+                    <div class="welcome-title">👋 Welcome</div>
+                    <div class="student-name">رنا محمد عبدالله محمد</div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- الشريط السفلي -->
+    <div class="taskbar">
+        <div class="start-btn" onclick="location.href='index.html'">🇪🇬 Start</div>
+        <div class="taskbar-tab">معلومات وتنبيهات</div>
+    </div>
+
 </body>
 </html>
