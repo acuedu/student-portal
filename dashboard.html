@@ -2,60 +2,29 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>Student Portal - ACU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
     <style>
-        body { margin: 0; padding: 0; background-color: #000; font-family: Tahoma, sans-serif; color: #fff; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
-        .main-container { display: flex; flex: 1; width: 100%; height: calc(100vh - 30px); }
-        
-        /* Sidebar */
-        .sidebar { width: 90px; background-color: #000; border-left: 1px solid #333; display: flex; flex-direction: column; padding: 10px 5px; gap: 10px; overflow-y: auto; }
-        .menu-item { display: flex; flex-direction: column; align-items: center; text-align: center; font-size: 9px; color: #fff; cursor: pointer; }
-        .menu-icon { width: 35px; height: 35px; background: #222; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 4px; border: 1px solid #444; }
-
-        /* Window Area */
-        .content-area { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px; }
-        .window-box { width: 550px; background-color: #e6e6e6; border: 1px solid #555; padding: 2px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-        .window-header { background: linear-gradient(to right, #003399, #0055cc); color: white; padding: 4px 8px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; }
-        .window-body { background-color: #f0f0f0; padding: 20px; text-align: center; color: #000; border: 1px inset #fff; }
-        
-        /* Taskbar */
-        .taskbar { height: 30px; background: #222; border-top: 1px solid #444; display: flex; align-items: center; padding: 0 5px; }
-        .start-btn { background: #333; color: white; padding: 2px 10px; font-size: 11px; cursor: pointer; border: 1px solid #555; display: flex; align-items: center; gap: 5px; }
-        .taskbar-tab { background: #444; color: #fff; padding: 2px 10px; font-size: 11px; margin-right: 10px; }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .text-box h1 { margin-bottom: 10px; font-size: 24px; color: #ccc; }
+        .text-box h2 { font-size: 28px; color: #fff; }
     </style>
 </head>
 <body>
-
-    <div class="main-container">
-        <div class="sidebar">
-            <div class="menu-item"><div class="menu-icon">📝</div><div>التسجيل</div></div>
-            <div class="menu-item"><div class="menu-icon">📅</div><div>الجدول</div></div>
-            <div class="menu-item"><div class="menu-icon">📊</div><div>التقديرات</div></div>
-            <div class="menu-item"><div class="menu-icon">👤</div><div>بياناتي</div></div>
-            <div class="menu-item"><div class="menu-icon">🎓</div><div>التقرير</div></div>
-            <div class="menu-item"><div class="menu-icon">❓</div><div>الاستبيان</div></div>
-            <div class="menu-item"><div class="menu-icon">💳</div><div>التقدير</div></div>
-            <div class="menu-item"><div class="menu-icon">⚠️</div><div>تنبيهات</div></div>
-        </div>
-
-        <div class="content-area">
-            <div class="window-box">
-                <div class="window-header">
-                    <span>معلومات وتنبيهات</span>
-                    <span style="cursor:pointer" onclick="location.href='index.html'">✕</span>
-                </div>
-                <div class="window-body">
-                    <h3 style="margin-bottom: 10px;">Welcome</h3>
-                    <p style="font-weight: bold; color: #003399;">رنا محمد عبدالله محمد</p>
-                </div>
-            </div>
-        </div>
+    <div class="text-box">
+        <h1>Welcome</h1>
+        <h2>رنا محمد عبدالله محمد</h2>
     </div>
-
-    <div class="taskbar">
-        <div class="start-btn" onclick="location.href='index.html'">🇪🇬 Start</div>
-        <div class="taskbar-tab">معلومات وتنبيهات</div>
-    </div>
-
 </body>
 </html>
