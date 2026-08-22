@@ -14,7 +14,6 @@
 
         .main-container { display: flex; flex: 1; height: calc(100vh - 30px); width: 100%; }
 
-        /* القائمة الجانبية الكاملة */
         .sidebar { 
             width: 85px; background-color: #000; border-left: 1px solid #222; 
             display: flex; flex-direction: column; padding: 8px 2px; gap: 8px; overflow-y: auto; 
@@ -25,10 +24,8 @@
             border: 1px solid #333; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 15px; 
         }
 
-        /* منطقة المنتصف */
         .content-area { flex: 1; display: flex; align-items: center; justify-content: center; padding: 15px; }
 
-        /* النافذة */
         .window-box { 
             width: 100%; max-width: 420px; background-color: #dcdcdc; 
             border: 1px solid #555; box-shadow: 0 4px 15px rgba(0,0,0,0.6); overflow: hidden;
@@ -42,7 +39,6 @@
         .welcome-title { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 8px; }
         .student-name { font-size: 16px; color: #003399; font-weight: bold; }
 
-        /* الشريط السفلي */
         .taskbar { 
             height: 30px; background: #1a1a1a; border-top: 1px solid #333; 
             display: flex; align-items: center; padding: 0 5px; 
@@ -57,7 +53,6 @@
 <body>
 
     <div class="main-container">
-        <!-- القائمة الجانبية -->
         <div class="sidebar">
             <div class="menu-item"><div class="menu-icon">📝</div><div>التسجيل</div></div>
             <div class="menu-item"><div class="menu-icon">📅</div><div>الجدول</div></div>
@@ -69,7 +64,6 @@
             <div class="menu-item"><div class="menu-icon">⚠️</div><div>تنبيهات</div></div>
         </div>
 
-        <!-- النافذة وبداخلها الترحيب فقط -->
         <div class="content-area">
             <div class="window-box">
                 <div class="window-header">
@@ -84,7 +78,6 @@
         </div>
     </div>
 
-    <!-- الشريط السفلي -->
     <div class="taskbar">
         <div class="start-btn" onclick="location.href='index.html'">🇪🇬 Start</div>
         <div class="taskbar-tab">معلومات وتنبيهات</div>
