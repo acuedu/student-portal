@@ -8,50 +8,56 @@
         * { box-sizing: border-box; }
         body, html { 
             margin: 0; padding: 0; height: 100vh; 
-            background-color: #008080; font-family: Tahoma, Arial, sans-serif; 
+            background-color: #000; font-family: Tahoma, Arial, sans-serif; 
             color: #000; overflow: hidden; display: flex; flex-direction: column;
         }
 
         .main-container { display: flex; flex: 1; height: calc(100vh - 30px); width: 100%; }
 
-        /* القائمة الجانبية بالألوان القديمة */
+        /* القائمة الجانبية بالأسلوب القديم */
         .sidebar { 
-            width: 85px; background-color: #008080; border-left: 1px solid #004d4d; 
+            width: 85px; background-color: #111; border-left: 1px solid #333; 
             display: flex; flex-direction: column; padding: 8px 2px; gap: 8px; overflow-y: auto; 
         }
         .menu-item { display: flex; flex-direction: column; align-items: center; text-align: center; font-size: 9px; color: #fff; cursor: pointer; }
         .menu-icon { 
-            width: 35px; height: 35px; margin-bottom: 3px; background-color: #fff; 
-            border: 1px solid #000; border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 16px; 
+            width: 36px; height: 36px; margin-bottom: 3px; background-color: #222; 
+            border: 1px solid #444; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; 
         }
 
-        /* منطقة المنتصف */
-        .content-area { flex: 1; display: flex; align-items: center; justify-content: center; padding: 15px; }
+        /* توسيط النافذة في منتصف الشاشة تماماً */
+        .content-area { 
+            flex: 1; 
+            display: flex; 
+            align-items: center;     /* توسيط رأسي */
+            justify-content: center; /* توسيط أفقي */
+            padding: 15px; 
+        }
 
-        /* النافذة بالألوان الكلاسيكية */
+        /* النافذة بالألوان الزرقاء والبيضاء القديمة */
         .window-box { 
-            width: 100%; max-width: 450px; background-color: #d4d0c8; 
-            border: 2px outset #fff; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); padding: 2px;
+            width: 100%; max-width: 420px; background-color: #ffffff; 
+            border: 1px solid #0055cc; border-radius: 6px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.7); overflow: hidden;
         }
         .window-header { 
-            background: linear-gradient(to right, #000080, #1084d0); color: white; 
-            padding: 4px 8px; font-size: 12px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; 
+            background: #0055cc; color: white; 
+            padding: 8px 12px; font-size: 13px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; 
         }
-        .window-body { background-color: #ffffff; padding: 40px 20px; text-align: center; border: 1px inset #fff; }
+        .window-body { background-color: #ffffff; padding: 40px 20px; text-align: center; }
 
-        .welcome-title { font-size: 20px; font-weight: bold; color: #000; margin-bottom: 10px; }
-        .student-name { font-size: 16px; color: #000080; font-weight: bold; }
+        .welcome-title { font-size: 22px; font-weight: bold; color: #333; margin-bottom: 12px; }
+        .student-name { font-size: 18px; color: #0055cc; font-weight: bold; }
 
-        /* الشريط السفلي القديم */
+        /* الشريط السفلي */
         .taskbar { 
-            height: 30px; background: #c0c0c0; border-top: 2px solid #fff; 
+            height: 30px; background: #111; border-top: 1px solid #333; 
             display: flex; align-items: center; padding: 0 5px; 
         }
         .start-btn { 
-            background: #c0c0c0; color: #000; border: 2px outset #fff; 
+            background: #222; color: #fff; border: 1px solid #444; 
             padding: 2px 10px; font-size: 11px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 5px; 
         }
-        .taskbar-tab { background: #d4d0c8; color: #000; padding: 2px 10px; font-size: 11px; margin-right: 8px; border: 2px inset #fff; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -69,7 +75,7 @@
             <div class="menu-item"><div class="menu-icon">⚠️</div><div>تنبيهات</div></div>
         </div>
 
-        <!-- النافذة تحتوي فقط على الترحيب والاسم بالألوان القديمة -->
+        <!-- النافذة في المنتصف تماماً -->
         <div class="content-area">
             <div class="window-box">
                 <div class="window-header">
@@ -77,7 +83,7 @@
                     <span style="cursor:pointer" onclick="location.href='index.html'">✕</span>
                 </div>
                 <div class="window-body">
-                    <div class="welcome-title">👋 Welcome</div>
+                    <div class="welcome-title">Welcome 👋</div>
                     <div class="student-name">رنا محمد عبدالله محمد</div>
                 </div>
             </div>
@@ -87,7 +93,6 @@
     <!-- الشريط السفلي -->
     <div class="taskbar">
         <div class="start-btn" onclick="location.href='index.html'">🇪🇬 Start</div>
-        <div class="taskbar-tab">معلومات وتنبيهات</div>
     </div>
 
 </body>
