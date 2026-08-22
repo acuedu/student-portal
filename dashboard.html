@@ -14,7 +14,7 @@
 
         .main-container { display: flex; flex: 1; height: 100vh; width: 100%; }
 
-        /* الشاشة الجانبية الداكنة */
+        /* الشريط الجانبي الداكن */
         .sidebar { 
             width: 90px; background-color: #121212; border-left: 1px solid #222; 
             display: flex; flex-direction: column; padding: 12px 0; gap: 14px; overflow-y: auto; 
@@ -28,7 +28,7 @@
         /* منطقة المنتصف */
         .content-area { flex: 1; display: flex; align-items: center; justify-content: center; padding: 15px; }
 
-        /* النافذة بالألوان المطبقة تماماً من الصورة */
+        /* النافذة */
         .window-box { 
             width: 100%; max-width: 420px; background-color: #2b3a55; 
             border: 1px solid #3b4e6d; border-radius: 8px;
@@ -48,7 +48,7 @@
             font-size: 9px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 2px;
         }
 
-        /* الكارت الأبيض الداخلي بحواف دائرية */
+        /* الكارت الأبيض الداخلي */
         .window-body { 
             background-color: #ffffff; padding: 35px 20px; text-align: center; 
             border-radius: 8px; margin: 2px; border: 1px solid #dcdcdc;
@@ -61,7 +61,7 @@
 <body>
 
     <div class="main-container">
-        <!-- النافذة بنفس مكان وألوان الصورة -->
+        <!-- النافذة الرئيسية -->
         <div class="content-area">
             <div class="window-box">
                 <div class="window-header">
@@ -82,7 +82,8 @@
         <!-- القائمة الجانبية -->
         <div class="sidebar">
             <div class="menu-item"><div class="menu-icon">📝</div><div>التسجيل</div></div>
-            <div class="menu-item"><div class="menu-icon">📅</div><div>الجدول</div></div>
+            <!-- زر الجدول مرتبط بصفحة schedule.html -->
+            <div class="menu-item" onclick="location.href='schedule.html'"><div class="menu-icon">📅</div><div>الجدول</div></div>
             <div class="menu-item"><div class="menu-icon">📊</div><div>التقديرات</div></div>
             <div class="menu-item"><div class="menu-icon">👤</div><div>بياناتي</div></div>
             <div class="menu-item"><div class="menu-icon">🎓</div><div>التقرير</div></div>
@@ -94,4 +95,5 @@
 
 </body>
 </html>
+
 
