@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التقديرات</title>
+    <style>
+        * { box-sizing: border-box; font-family: Arial, sans-serif; }
+        body, html { margin: 0; padding: 0; background-color: #e0e0e0; color: #000; direction: ltr; }
+
+        .top-bar { 
+            background-color: #3b4252; color: #ffffff; padding: 6px 12px; 
+            font-size: 13px; font-weight: bold; text-align: right; direction: rtl; height: 30px;
+        }
+
+        .container { padding: 10px; max-width: 800px; margin: auto; }
+
+        .user-info { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; font-size: 13px; color: #000; font-weight: bold; }
+        .user-info-left { display: flex; align-items: center; gap: 8px; }
+        .user-icon { width: 22px; height: 22px; background: #8faadc; border: 1px solid #555; display: flex; align-items: center; justify-content: center; }
+
+        /* الجدول الرئيسي */
+        .grades-table { border-collapse: separate; border-spacing: 2px; width: 100%; font-size: 12px; background-color: #b0b0b0; border: 2px solid #555; padding: 3px; }
+        .grades-table th { background-color: #0099a8; color: #fff; padding: 8px 4px; border: 1px solid #007a87; text-align: center; font-size: 12px; }
+        .grades-table td { background-color: #ffffff; padding: 6px 8px; border: 1px solid #777; text-align: center; }
+        .grades-table td.title-col { text-align: left; font-weight: bold; }
+
+        /* رؤوس الفصول الدراسية البرتقالية */
+        .term-header { background-color: #ffb03b !important; color: #000; font-weight: bold; text-align: center !important; font-size: 13px; padding: 6px !important; }
+
+        /* ملخص المعدل التراكمي في الأسفل */
+        .summary-box { margin-top: 4px; border: 2px solid #555; }
+        .summary-row { padding: 8px 12px; font-weight: bold; font-size: 13px; border-bottom: 1px solid #fff; }
+        .gpa-yellow { background-color: #f4ef56; color: #000; }
+        .gpa-light-green { background-color: #a4eb54; color: #000; }
+        .gpa-green { background-color: #55e055; color: #000; }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar"></div>
+
+    <div class="container">
+        <!-- بيانات الطالب العلوي -->
+        <div class="user-info">
+            <div class="user-info-left">
+                <div class="user-icon">👤</div>
+                <span>12520002</span>
+                <span>رنا محمد عبدالله محمد</span>
+            </div>
+            <div>
+                <span style="margin-right: 15px;">GPA : 3.11</span>
+                <span>Total Credits: 27</span>
+            </div>
+        </div>
+
+        <!-- جدول التقديرات -->
+        <table class="grades-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Course No</th>
+                    <th style="width: 45%;">Course Title</th>
+                    <th style="width: 12%;">Grade</th>
+                    <th style="width: 10%;">Hours</th>
+                    <th style="width: 18%;">Quality Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Spring-2026 -->
+                <tr><td colspan="5" class="term-header">Spring-2026</td></tr>
+                <tr><td>PBC122</td><td class="title-col">Cell Biology</td><td>B</td><td>2</td><td>6.00</td></tr>
+                <tr><td>PBC123</td><td class="title-col">Psychology</td><td>B</td><td>1</td><td>3.00</td></tr>
+                <tr><td>PCC111</td><td class="title-col">Pharmaceutical Analytical Chemistry-1</td><td>B</td><td>3</td><td>9.00</td></tr>
+                <tr><td>PCC112</td><td class="title-col">Pharmaceutical Organic Chemistry-I</td><td>B</td><td>3</td><td>9.00</td></tr>
+                <tr><td>POC122</td><td class="title-col">Anatomy and Histology</td><td>B+</td><td>3</td><td>10.50</td></tr>
+                <tr><td>PPC212</td><td class="title-col">Marketing and Pharmacoeconomics</td><td>C</td><td>2</td><td>4.00</td></tr>
+                <tr><td>PTC122</td><td class="title-col">Physical Pharmacy</td><td>B</td><td>3</td><td>9.00</td></tr>
+                <tr><td>PTC214</td><td class="title-col">Entrepreneurship</td><td>B+</td><td>1</td><td>3.50</td></tr>
+                <tr><td>SNS00</td><td class="title-col">Strategy and National Security</td><td>UNKNOWN</td><td>0</td><td>0.00</td></tr>
+
+                <!-- Summer-2026 -->
+                <tr><td colspan="5" class="term-header">Summer-2026</td></tr>
+                <tr><td>PBC111</td><td class="title-col">Mathematics</td><td>A</td><td>3</td><td>12.00</td></tr>
+                <tr><td>PCC112</td><td class="title-col">Pharmaceutical Organic Chemistry-II</td><td>B</td><td>3</td><td>9.00</td></tr>
+                <tr><td>PGC111</td><td class="title-col">Medicinal Plants</td><td>B</td><td>3</td><td>9.00</td></tr>
+            </tbody>
+        </table>
+
+        <!-- شريط المعدل في الأسفل -->
+        <div class="summary-box">
+            <div class="summary-row gpa-yellow">Cumulative GPA = 3.11</div>
+            <div class="summary-row gpa-light-green">Last Term GPA = 3.33</div>
+            <div class="summary-row gpa-green">Total Credits = 27</div>
+        </div>
+    </div>
+
+</body>
+  </html>
+  
