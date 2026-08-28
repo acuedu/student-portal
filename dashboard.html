@@ -14,7 +14,6 @@
 
         .main-container { display: flex; flex: 1; height: 100vh; width: 100%; }
 
-        /* القائمة الجانبية */
         .sidebar { 
             width: 90px; background-color: #121212; border-left: 1px solid #222; 
             display: flex; flex-direction: column; padding: 12px 0; gap: 14px; overflow-y: auto; 
@@ -30,7 +29,6 @@
             border: 1px solid #2d2d2d; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; 
         }
 
-        /* منطقة المحتوى */
         .content-area { flex: 1; display: flex; align-items: center; justify-content: center; padding: 15px; }
 
         .window-box { 
@@ -78,7 +76,12 @@
                 <div>التقديرات</div>
             </div>
 
-            <div class="menu-item"><div class="menu-icon">👤</div><div>بياناتي</div></div>
+            <!-- زر بياناتي -->
+            <div class="menu-item" onclick="goToPage('profile.html')">
+                <div class="menu-icon">👤</div>
+                <div>بياناتي</div>
+            </div>
+
             <div class="menu-item"><div class="menu-icon">🎓</div><div>التقرير</div></div>
             <div class="menu-item"><div class="menu-icon">❓</div><div>الاستبيان</div></div>
             <div class="menu-item"><div class="menu-icon">💳</div><div>التقدير</div></div>
