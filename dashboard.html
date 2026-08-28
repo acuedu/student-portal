@@ -20,9 +20,9 @@
         }
         .menu-item { 
             display: flex; flex-direction: column; align-items: center; text-align: center; 
-            font-size: 11px; color: #a0a0a0; cursor: pointer; user-select: none;
+            font-size: 11px; color: #a0a0a0; cursor: pointer; text-decoration: none;
         }
-        .menu-item:active { opacity: 0.6; transform: scale(0.95); }
+        .menu-item:active { opacity: 0.6; }
         
         .menu-icon { 
             width: 44px; height: 44px; margin-bottom: 4px; background-color: #1e1e1e; 
@@ -64,23 +64,21 @@
         <div class="sidebar">
             <div class="menu-item"><div class="menu-icon">📝</div><div>التسجيل</div></div>
             
-            <!-- زر الجدول -->
-            <div class="menu-item" onclick="goToPage('schedule.html')">
+            <a href="schedule.html" class="menu-item">
                 <div class="menu-icon">📅</div>
                 <div>الجدول</div>
-            </div>
+            </a>
 
-            <!-- زر التقديرات -->
-            <div class="menu-item" onclick="goToPage('grades.html')">
+            <a href="grades.html" class="menu-item">
                 <div class="menu-icon">📊</div>
                 <div>التقديرات</div>
-            </div>
+            </a>
 
-            <!-- زر بياناتي -->
-            <div class="menu-item" onclick="goToPage('profile.html')">
+            <!-- رابط بياناتي المباشر -->
+            <a href="profile.html" class="menu-item">
                 <div class="menu-icon">👤</div>
                 <div>بياناتي</div>
-            </div>
+            </a>
 
             <div class="menu-item"><div class="menu-icon">🎓</div><div>التقرير</div></div>
             <div class="menu-item"><div class="menu-icon">❓</div><div>الاستبيان</div></div>
@@ -93,7 +91,7 @@
             <div class="window-box">
                 <div class="window-header">
                     <div class="window-controls">
-                        <div class="win-btn" onclick="goToPage('index.html')">✕</div>
+                        <div class="win-btn" onclick="window.location.href='index.html'">✕</div>
                         <div class="win-btn">▢</div>
                         <div class="win-btn">-</div>
                     </div>
@@ -107,13 +105,9 @@
         </div>
     </div>
 
-    <script>
-        function goToPage(page) {
-            window.location.assign(page);
-        }
-    </script>
 </body>
 </html>
+
 
 
 
