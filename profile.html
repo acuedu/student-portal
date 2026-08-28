@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بياناتي</title>
+    <style>
+        * { box-sizing: border-box; font-family: Arial, sans-serif; }
+        body, html { 
+            margin: 0; padding: 0; height: 100vh; 
+            background-color: #000000; display: flex; 
+            align-items: center; justify-content: center; direction: ltr;
+        }
+
+        .window-box { 
+            width: 100%; max-width: 450px; background-color: #2b3a55; 
+            border: 1px solid #3b4e6d; border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8); overflow: hidden; padding: 2px;
+        }
+        
+        .window-header { 
+            background: linear-gradient(to bottom, #355383, #223759); color: #ffffff; 
+            padding: 6px 10px; font-size: 13px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; 
+            direction: rtl;
+        }
+        
+        .window-controls { display: flex; gap: 4px; }
+        .win-btn { 
+            width: 16px; height: 16px; background: #3b4e6d; color: #fff; border: 1px solid #52678a; 
+            font-size: 9px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 2px;
+        }
+
+        .window-body { 
+            background-color: #dcdcdc; padding: 8px; border-radius: 2px; margin: 2px;
+        }
+
+        .table-header {
+            background-color: #3b4252; color: #ffffff; text-align: center;
+            font-weight: bold; padding: 6px; font-size: 13px; margin-bottom: 2px;
+        }
+
+        .profile-table { width: 100%; border-collapse: collapse; background-color: #ffffff; font-size: 12px; }
+        .profile-table td { border: 1px solid #c0c0c0; padding: 8px; text-align: left; }
+        .profile-table td.label-col { font-weight: bold; width: 40%; color: #333; }
+        .profile-table tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+
+    <div class="window-box">
+        <div class="window-header">
+            <span>بياناتي</span>
+            <div class="window-controls">
+                <div class="win-btn" onclick="window.location.href='dashboard.html'">✕</div>
+                <div class="win-btn">▢</div>
+                <div class="win-btn">-</div>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="table-header">Student Profile</div>
+            <table class="profile-table">
+                <tr>
+                    <td class="label-col">Code</td>
+                    <td>12520002</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Name Arabic</td>
+                    <td style="direction: rtl; text-align: right;">رنا محمد عبدالله محمد</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Name English</td>
+                    <td>Rana Mohamed Abdullah</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Program Name</td>
+                    <td>PharmD C</td>
+                </tr>
+                <tr>
+                    <td class="label-col">GPA</td>
+                    <td>3.11</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Last Term GPA</td>
+                    <td>3.33</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Total Credits</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td class="label-col">Payment Code</td>
+                    <td>---</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
