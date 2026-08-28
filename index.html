@@ -3,54 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACU - Student Portal Login</title>
+    <title>تسجيل الدخول - جامعة الأهرام الكندية</title>
     <style>
-        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #ffffff; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
-        .header { width: 100%; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; }
-        .header-title .ar { font-size: 26px; font-weight: bold; color: #002b66; }
-        .header-title .en { font-size: 16px; font-weight: bold; color: #c8102e; }
-        .logo-box { background-color: #002b66; color: white; padding: 10px 15px; border-radius: 8px; font-weight: bold; }
-        .content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-top: 30px; }
-        .classlist-link { font-size: 18px; font-weight: bold; color: #000; text-decoration: underline; margin-bottom: 50px; }
-        .login-window { width: 320px; border: 1px solid #99bce8; background-color: #dfe8f6; box-shadow: 0 4px 10px rgba(0,0,0,0.15); font-size: 13px; }
-        .login-header { background-color: #b0caec; padding: 6px 10px; font-weight: bold; color: #15428b; border-bottom: 1px solid #99bce8; }
-        .login-body { padding: 15px 20px; direction: ltr; }
-        .form-group { display: flex; align-items: center; margin-bottom: 10px; }
-        .form-group label { width: 90px; color: #15428b; font-size: 12px; }
-        .form-group input { flex: 1; padding: 3px 5px; border: 1px solid #b5b8c8; font-size: 12px; }
-        .login-footer { background-color: #d8e4f3; padding: 8px; border-top: 1px solid #99bce8; display: flex; justify-content: flex-end; }
-        .login-btn { cursor: pointer; padding: 3px 12px; font-size: 12px; }
-        .error-msg { color: red; font-size: 11px; text-align: center; margin-top: 5px; display: none; }
+        * { box-sizing: border-box; font-family: Tahoma, Arial, sans-serif; }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* حاوية اللوجو المطابق للصورة تماماً */
+        .logo-container {
+            width: 100%;
+            max-width: 550px;
+            margin-top: 20px;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 2px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        }
+
+        .download-link {
+            margin: 35px 0 25px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000;
+            text-decoration: underline;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        /* صندوق تسجيل الدخول */
+        .login-card {
+            width: 90%;
+            max-width: 400px;
+            border: 1px solid #a3c2e0;
+            border-radius: 3px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background-color: #e8f1f8;
+            overflow: hidden;
+            direction: ltr;
+        }
+
+        .login-header {
+            background-color: #b5d1ea;
+            padding: 8px 12px;
+            color: #1a4268;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 5px;
+            border-bottom: 1px solid #a3c2e0;
+        }
+
+        .login-body {
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .input-group label {
+            font-size: 13px;
+            color: #1a4268;
+            font-weight: bold;
+            width: 30%;
+        }
+
+        .input-group input {
+            width: 65%;
+            padding: 5px 8px;
+            border: 1px solid #a3c2e0;
+            border-radius: 2px;
+            outline: none;
+            font-size: 13px;
+            background-color: #ffffff;
+        }
+
+        .login-footer {
+            background-color: #d8e6f3;
+            padding: 8px 12px;
+            border-top: 1px solid #a3c2e0;
+        }
+
+        .login-btn {
+            background-color: #f2f2f2;
+            border: 1px solid #707070;
+            padding: 4px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .login-btn:hover {
+            background-color: #e5e5e5;
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="header-title">
-            <div class="ar">جامعة الأهرام الكندية</div>
-            <div class="en">AHRAM CANADIAN UNIVERSITY</div>
-        </div>
-        <div class="logo-box">ACU</div>
+
+    <!-- صورة اللوجو الأصلية والتصميم المتطابق -->
+    <div class="logo-container">
+        <img src="https://i.ibb.co/68vM3J8/acu-logo.png" alt="Ahram Canadian University - ACU Logo">
     </div>
-    <div class="content">
-        <a href="#" class="classlist-link">Download Students ClassList</a>
-        <div class="login-window">
-            <div class="login-header">🔒 Login</div>
-            <div class="login-body">
-                <div class="form-group"><label>User Code:</label><input type="text" id="username"></div>
-                <div class="form-group"><label>Password:</label><input type="password" id="password"></div>
-                <div id="error" class="error-msg">بيانات الدخول غير صحيحة!</div>
+
+    <a class="download-link" href="#">Download Students ClassList</a>
+
+    <!-- صندوق تسجيل الدخول -->
+    <div class="login-card">
+        <div class="login-header">
+            <span>Login 🔒</span>
+        </div>
+        <div class="login-body">
+            <div class="input-group">
+                <label>User Code:</label>
+                <input type="text" id="userCode">
             </div>
-            <div class="login-footer"><button class="login-btn" onclick="login()">✔ Login</button></div>
+            <div class="input-group">
+                <label>Password:</label>
+                <input type="password" id="password">
+            </div>
+        </div>
+        <div class="login-footer">
+            <button class="login-btn" onclick="window.location.href='dashboard.html'">Login ✔</button>
         </div>
     </div>
-    <script>
-        function login() {
-            var u = document.getElementById("username").value;
-            var p = document.getElementById("password").value;
-            if (u === "1252002" && p === "123456") { window.location.href = "dashboard.html"; }
-            else { document.getElementById("error").style.display = "block"; }
-        }
-    </script>
+
 </body>
 </html>
-
