@@ -16,7 +16,7 @@
             min-height: 100vh;
         }
 
-        /* حاوية اللوجو المطابق للصورة تماماً */
+        /* حاوية اللوجو */
         .logo-container {
             width: 100%;
             max-width: 550px;
@@ -25,12 +25,60 @@
             text-align: center;
         }
 
-        .logo-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 2px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+        .logo-header-box {
+            background: linear-gradient(to right, #6bb8b4, #b2dedb, #6bb8b4);
+            border: 1px solid #5aa7a3;
+            border-radius: 4px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .titles-box {
+            text-align: right;
+        }
+
+        .arabic-title {
+            font-size: 26px;
+            font-weight: bold;
+            color: #0d2948;
+            font-family: 'Traditional Arabic', 'Segoe UI', serif;
+            line-height: 1.1;
+        }
+
+        .english-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #d1121d;
+            font-family: Arial, sans-serif;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        /* شعار ACU المدمج */
+        .badge-box {
+            background: linear-gradient(to bottom, #13528c, #072e54);
+            border: 2px solid #fbc02d;
+            border-radius: 12px 12px 6px 6px;
+            padding: 6px 14px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .leaf-icon {
+            color: #e53935;
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .badge-text {
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 17px;
+            font-family: Arial, sans-serif;
+            letter-spacing: 1px;
         }
 
         .download-link {
@@ -112,9 +160,6 @@
             cursor: pointer;
             border-radius: 3px;
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 4px;
         }
 
         .login-btn:hover {
@@ -124,9 +169,18 @@
 </head>
 <body>
 
-    <!-- صورة اللوجو الأصلية والتصميم المتطابق -->
+    <!-- الشعار المصمم مباشرة بنفس الألوان والأبعاد والتدرج -->
     <div class="logo-container">
-        <img src="https://i.ibb.co/68vM3J8/acu-logo.png" alt="Ahram Canadian University - ACU Logo">
+        <div class="logo-header-box">
+            <div class="titles-box">
+                <div class="arabic-title">جامعـة الأهرام الكنديـة</div>
+                <div class="english-title">AHRAM CANADIAN UNIVERSITY</div>
+            </div>
+            <div class="badge-box">
+                <div class="leaf-icon">🍁</div>
+                <div class="badge-text">ACU</div>
+            </div>
+        </div>
     </div>
 
     <a class="download-link" href="#">Download Students ClassList</a>
