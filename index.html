@@ -140,14 +140,6 @@
             background-color: #ffffff;
         }
 
-        .error-message {
-            color: red;
-            font-size: 12px;
-            text-align: center;
-            display: none;
-            margin-bottom: 10px;
-        }
-
         .login-footer {
             background-color: #d8e6f3;
             padding: 8px 12px;
@@ -190,44 +182,20 @@
         <div class="login-header">
             <span>Login 🔒</span>
         </div>
-        <form id="loginForm" onsubmit="handleLogin(event)">
-            <div class="login-body">
-                <div class="input-group">
-                    <label>User Code:</label>
-                    <input type="text" id="userCode" required>
-                </div>
-                <div class="input-group">
-                    <label>Password:</label>
-                    <input type="password" id="password" required>
-                </div>
-                <div id="errorMessage" class="error-message">User Code أو Password غير صحيح!</div>
+        <div class="login-body">
+            <div class="input-group">
+                <label>User Code:</label>
+                <input type="text" id="userCode">
             </div>
-            <div class="login-footer">
-                <button type="submit" class="login-btn">Login ✔</button>
+            <div class="input-group">
+                <label>Password:</label>
+                <input type="password" id="password">
             </div>
-        </form>
+        </div>
+        <div class="login-footer">
+            <button type="button" class="login-btn" onclick="location.href='./dashboard.html'">Login ✔</button>
+        </div>
     </div>
-
-    <script>
-        function handleLogin(event) {
-            event.preventDefault();
-            const userCode = document.getElementById('userCode').value.trim();
-            const password = document.getElementById('password').value.trim();
-            const errorMsg = document.getElementById('errorMessage');
-
-            // يمكنك تغيير القيم هنا حسب المطلوب
-            const validUserCode = "12520002";
-            const validPassword = "123456";
-
-            if (userCode === validUserCode && password === validPassword) {
-                window.location.href = "dashboard.html";
-            } else {
-                errorMsg.style.display = "block";
-            }
-        }
-    </script>
 
 </body>
 </html>
-
-
