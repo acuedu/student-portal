@@ -36,9 +36,7 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.15);
         }
 
-        .titles-box {
-            text-align: right;
-        }
+        .titles-box { text-align: right; }
 
         .arabic-title {
             font-size: 26px;
@@ -67,11 +65,7 @@
             box-shadow: 0 3px 6px rgba(0,0,0,0.3);
         }
 
-        .leaf-icon {
-            color: #e53935;
-            font-size: 16px;
-            line-height: 1;
-        }
+        .leaf-icon { color: #e53935; font-size: 16px; line-height: 1; }
 
         .badge-text {
             color: #ffffff;
@@ -146,6 +140,14 @@
             background-color: #ffffff;
         }
 
+        .error-message {
+            color: red;
+            font-size: 12px;
+            text-align: center;
+            display: none;
+            margin-bottom: 10px;
+        }
+
         .login-footer {
             background-color: #d8e6f3;
             padding: 8px 12px;
@@ -162,9 +164,7 @@
             font-weight: bold;
         }
 
-        .login-btn:hover {
-            background-color: #e5e5e5;
-        }
+        .login-btn:hover { background-color: #e5e5e5; }
     </style>
 </head>
 <body>
@@ -190,21 +190,44 @@
         <div class="login-header">
             <span>Login 🔒</span>
         </div>
-        <div class="login-body">
-            <div class="input-group">
-                <label>User Code:</label>
-                <input type="text" id="userCode">
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="login-body">
+                <div class="input-group">
+                    <label>User Code:</label>
+                    <input type="text" id="userCode" required>
+                </div>
+                <div class="input-group">
+                    <label>Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div id="errorMessage" class="error-message">User Code أو Password غير صحيح!</div>
             </div>
-            <div class="input-group">
-                <label>Password:</label>
-                <input type="password" id="password">
+            <div class="login-footer">
+                <button type="submit" class="login-btn">Login ✔</button>
             </div>
-        </div>
-        <div class="login-footer">
-            <button class="login-btn" onclick="window.location.href='dashboard.html'">Login ✔</button>
-        </div>
+        </form>
     </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const userCode = document.getElementById('userCode').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorMsg = document.getElementById('errorMessage');
+
+            // يمكنك تغيير القيم هنا حسب المطلوب
+            const validUserCode = "12520002";
+            const validPassword = "123456";
+
+            if (userCode === validUserCode && password === validPassword) {
+                window.location.href = "dashboard.html";
+            } else {
+                errorMsg.style.display = "block";
+            }
+        }
+    </script>
 
 </body>
 </html>
+
 
